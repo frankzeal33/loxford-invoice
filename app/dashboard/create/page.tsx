@@ -3,45 +3,13 @@ import Title from '@/components/Title'
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
-  CardTitle,
 } from "@/components/ui/card"
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { addDays, format } from "date-fns"
-import { Calendar as CalendarIcon, Minus, Plus, Trash2 } from "lucide-react"
-import { Calendar } from "@/components/ui/calendar"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover"
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
 import { Button } from '@/components/ui/button'
 import { useEffect, useState } from 'react'
-import { cn } from '@/lib/utils'
-import CurrencyPicker, { currencyOptions } from '@/utils/CurrencyPicker'
 import { Textarea } from '@/components/ui/textarea'
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableFooter,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table"
-import displayCurrency from '@/utils/displayCurrency'
 import { z } from "zod";
 import { toast } from 'react-toastify'
 import { axiosClient } from '@/GlobalApi'
@@ -144,7 +112,7 @@ const page = () => {
     { id: uuidv4(), itemTitle: "", itemQuantity: "", itemAmount: "", tax: "", itemTotal: 0 },
   ])
   const [file, setFile] = useState<File | null>(null);
-  const [imageInfo, setImageInfo] = useState(null)
+  const [imageInfo, setImageInfo] = useState<{ url: string; temp_id: string } | null>(null)
   const [isUploading, setIsUploading] = useState(false);
   const [preview, setPreview] = useState<string | null>(null);
 
@@ -181,7 +149,7 @@ const page = () => {
                 url: result.data?.data?.attributes?.url,
                 temp_id: result.data?.data?.attributes?.temp_id
             }
-            setImageInfo(imagedata)
+            // setImageInfo(imagedata)
             setForm((f) => ({ ...f, temp_image_id: imagedata.temp_id }));
             toast.success("Image uploaded!");
         } catch (err: any) {

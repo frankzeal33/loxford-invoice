@@ -1,5 +1,3 @@
-import React from 'react'
-
 const SkeletonFull = () => {
   return (
     <div className='w-full h-96 bg-light rounded-sm flex'>

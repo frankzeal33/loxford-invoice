@@ -3,22 +3,11 @@ import React, { useEffect, useState } from 'react'
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
-  TableFooter,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
 import { axiosClient } from '@/GlobalApi'
 import { toast } from 'react-toastify'
 import { format } from 'date-fns'
