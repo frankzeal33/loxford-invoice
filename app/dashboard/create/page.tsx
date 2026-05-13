@@ -445,20 +445,20 @@ const page = () => {
             <CardContent>
               <div className="grid gap-6">
                 <div className="grid gap-2">
-                  <Label htmlFor="c-name">Client Name</Label>
-                  <Input id="c-name" value={form.client_name} onChange={(e: any) => setForm({ ...form, client_name: e.target.value})} placeholder="Client name"/>
+                  <Label htmlFor="c-name">Account Name</Label>
+                  <Input id="c-name" value={form.client_name} onChange={(e: any) => setForm({ ...form, client_name: e.target.value})} placeholder="Account name"/>
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="c-email">Client Email</Label>
-                  <Input id="c-email" value={form.client_email} onChange={(e: any) => setForm({ ...form, client_email: e.target.value})} type='email' placeholder="email"/>
+                  <Label htmlFor="c-phone">Account Number</Label>
+                  <Input id='c-phone' value={form.client_phone} onChange={(e: any) => setForm({ ...form, client_phone: e.target.value})} placeholder="Account Number"/>
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="C-address" className='text-accent-foreground'>Client Address</Label>
-                  <Textarea value={form.client_address} onChange={(e: any) => setForm({ ...form, client_address: e.target.value})} placeholder="Enter address here" className='resize-none h-20 scrollbar-rounded' />
+                  <Label htmlFor="c-email">Bank Name</Label>
+                  <Input id="c-email" value={form.client_email} onChange={(e: any) => setForm({ ...form, client_email: e.target.value})} placeholder="Bank name"/>
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="c-phone">Client Phone</Label>
-                  <Input id='c-phone' value={form.client_phone} onChange={(e: any) => setForm({ ...form, client_phone: e.target.value})} placeholder="e.g +2348345986982"/>
+                  <Label htmlFor="C-address" className='text-accent-foreground'>Sort Code</Label>
+                  <Textarea value={form.client_address} onChange={(e: any) => setForm({ ...form, client_address: e.target.value})} placeholder="Sort code" className='resize-none h-20 scrollbar-rounded' />
                 </div>
               </div>
             </CardContent>
